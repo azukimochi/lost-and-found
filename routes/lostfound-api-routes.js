@@ -170,41 +170,41 @@ router.post('/api/claim/lost', function (req, res) {
 
 // SEND CONFIRMATION EMAILS FOR LOST, FOUND AND CLAIMS
 function sendLostEnteredEmailToUser(email, firstName, lastname, itemID) {
-  var emailBody = 'Dear ' + firstName + ' ' + lastname + ',\n' + 'Welcome to Lost and Found App\n'
-    + 'We have received your lost item report.\n\n'
-    + 'Your unique item ID code is: ' + itemID + '\n'
-    + 'You will be informed by Email if we found any items match with your property.\n'
+  var emailBody = 'Dear ' + firstName + ' ' + lastname + ',\n' + 'Welcome to Lost & Found!\n'
+    + 'We are sorry to hear that you have lost an item.  However, we have received your lost item report.\n\n'
+    + 'Your unique item ID is: ' + itemID + '\n'
+    + 'If another user has found an item that matches your description, they will email you.  Periodically check our Browse section to see if you can find the item listed as a Found Item.\n'
     + '\n'
     + 'Regards,\n'
     + 'Lost and Found Development Team';
-  var emailSubject = firstName + ' ' + lastname + ' Confirmation - Lost Item information received';
+  var emailSubject = firstName + ' ' + lastname + ' Confirmation - Your Lost Item Report Has Been Received!';
   var sendUserEmail = new sendmail(email, emailSubject, emailBody);
 }
 
 function sendFoundEnteredEmailToUser(email, firstName, lastname, itemID) {
-  var emailBody = 'Dear ' + firstName + ' ' + lastname + ',\n' + 'Welcome to Lost and Found App\n'
+  var emailBody = 'Dear ' + firstName + ' ' + lastname + ',\n' + 'Welcome to Lost & Found!\n'
     + 'We have received your found item report.\n'
-    + 'Thanks for your kind consideration to people properties\n\n'
-    + 'Your unique item ID code is: ' + itemID + '\n'
-    + 'We will try to find someone who lost this item'
+    + 'Kudos to you for finding it!\n\n'
+    + 'Your unique item ID is: ' + itemID + '\n'
+    + 'You will be emailed if the owner attempts to claim this item from the listing.  Otherwise, continue to check our Browse section from time to time. You might be able to find the item you have found listed as a Lost Item.  '
     + '\n'
     + 'Regards,\n'
     + 'Lost and Found Development Team';
 
-  var emailSubject = firstName + ' ' + lastname + ' Confirmation - Found Item information received';
+  var emailSubject = firstName + ' ' + lastname + ' Confirmation - Your Found Item Report Has Been Received!';
   var sendUserEmail = new sendmail(email, emailSubject, emailBody);
 }
 
 function sendClaimEnteredEmailToUser(email, firstName, lastname, claimID) {
-  var emailBody = 'Dear ' + firstName + ' ' + lastname + ',\n' + 'Welcome to Lost and Found App\n'
-    + 'Our records show you calimed an item which belongs to you or you found an item which is in lost items list\n\n'
-    + 'The claims ID is:' + claimID + '\n'
-    + 'the email related to that item is:' + email
-    + ' You can connect via this email to related user\n'
+  var emailBody = 'Dear ' + firstName + ' ' + lastname + ',\n' + 'Welcome to Lost & Found!\n'
+    + 'Our records show you have claimed an item which belongs to you or you have found an item that has been listed as lost.\n\n'
+    + 'Your claim ID is:' + claimID + '\n'
+    + 'The email related to that item is:' + email
+    + 'Please message the user using the above email address in order to exchange the item.\n'
     + '\n'
     + 'Regards,\n'
     + 'Lost and Found Development Team';
-  var emailSubject = firstName + ' ' + lastname + ' Confirmation - Claim Item information received';
+  var emailSubject = firstName + ' ' + lastname + ' Confirmation - You Have Claimed an Item! Please Contact the User!';
   var sendUserEmail = new sendmail(email, emailSubject, emailBody);
 }
 

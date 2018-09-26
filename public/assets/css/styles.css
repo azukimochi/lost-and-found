@@ -38,7 +38,7 @@ tr:nth-child(even) {
     background-size: cover;
 }
 
-h2 {
+h2, #confirmMsg {
 color: white;
 font-weight: 100;
 }
@@ -58,6 +58,10 @@ h7, h8 {
     color: white;
 }
 
+#confirmMsg {
+    margin-top: 15px;
+}
+
 #homeBG {
     background-image: url("../img/rainbowBG.jpg");
     background-size: cover;
@@ -68,10 +72,16 @@ label {
     font-weight: 100;
 }
 
-.notSignedMessage, #welcomUser, #email-enter-error, #pass-enter-error {
-    font-weight: 250;
-    font-size: 20px; 
+#email-enter-error, #last-enter-error, #first-enter-error, #pass-enter-error {
+    font-weight: 400;
+    /* font-size: 20px;  */
+    color: black;
+}
+
+.notSignedMessage, #welcomUser {
     color: white;
+    font-weight: 100;
+    font-size: 15px;
 }
 
 #signInButton {

@@ -113,14 +113,14 @@ router.post('/api/userpost', (req, res) => {
 });
 
 function sendEmailToNewUser(email, firstName,lastname, password) {
-    var emailBody = 'Hello '+firstName+' '+lastname+',\n'+'Welcome to Lost and Found App\n'+'Your Registration has been done successfully\n\n'
-    +'You can log in by below credentials:\n'
+    var emailBody = 'Hello '+firstName+' '+lastname+',\n'+'Welcome to Lost & Found!\n'+'Your registration has been completed.\n\n'
+    +'You can log in with the credentials below:\n'
     +'Username: '+email+'\n'
     +'Password: '+password+'\n'
     +'\n'
     +'Regards,\n'
     +'Lost and Found Development Team'
-    var emailSubject = firstName + ' Welcome to Lost and Found App'
+    var emailSubject = firstName + ' Welcome to Lost & Found!'
     var sendUserEmail = new sendmail(email, emailSubject, emailBody);
 };
 
@@ -128,14 +128,14 @@ function sendEmailToNewUser(email, firstName,lastname, password) {
 //Authorization: Bearer <access_token>
 function sendSMS(email, firstName,lastname, password) {
     var phoneNumber = "14165709944";
-    var message = 'Hello '+firstName+' '+lastname+',\n'+'Welcome to Lost and Found App\n'+'Your Registration has been done successfully\n'
-    +'You can log in by below credentials:\n'
+    var message = 'Hello '+firstName+' '+lastname+',\n'+'Welcome to Lost & Found!\n'+'Your registration has been completed.\n'
+    +'You can log in with the credentials below:\n'
     +'Username: '+email+'\n'
     +'Password: '+password+'\n'
     +'\n'
     +'Regards,\n'
     +'Lost and Found Development Team'
-    var emailSubject = firstName + ' Welcome to Lost and Found App'
+    var emailSubject = firstName + ' Welcome to Lost & Found!'
     var messageType = "ARN";
     var newsendSMS = new sendsms(phoneNumber, message, messageType);
 };

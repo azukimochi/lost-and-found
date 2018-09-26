@@ -1,6 +1,6 @@
 // The code for populating the list of found items at the bottom of the found.html
 $(document).ready(function () {
-
+  $("#confirmMsg").hide();
   $(document).on('submit', '#foundItemsEntry', submitFoundItem);
 
   function submitFoundItem(event) {
@@ -47,6 +47,7 @@ $(document).ready(function () {
   }
 
   function addNewItem(data) {
+    $("#confirmMsg").show();
     $.ajax('/api/found', {
       type: 'POST',
       data: data

@@ -1,6 +1,6 @@
 // The code for populating the list of lost items at the bottom of the lost.html
 $(document).ready(function () {
-
+  $("#confirmMsg").hide();
   $(document).on('submit', '#itemsEntry', submitLostItem);
 
   function submitLostItem(event) {
@@ -48,11 +48,12 @@ $(document).ready(function () {
   }
 
   function addNewItem(data) {
+    $("#confirmMsg").show();
     $.ajax('/api/lost', {
       type: 'POST',
       data: data
     }).then(function (res) {
-      location.replace('/browse-items');
+      location.replace('localhost:8080/browse-items');
     });
   }
 });

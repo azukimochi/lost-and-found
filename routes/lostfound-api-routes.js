@@ -198,8 +198,8 @@ function sendFoundEnteredEmailToUser(email, firstName, lastname, itemID) {
 function sendClaimEnteredEmailToUser(email, firstName, lastname, claimID) {
   var emailBody = 'Dear ' + firstName + ' ' + lastname + ',\n' + 'Welcome to Lost & Found!\n'
     + 'Our records show you have claimed an item which belongs to you or you have found an item that has been listed as lost.\n\n'
-    + 'Your claim ID is:' + claimID + '\n'
-    + 'The email related to that item is:' + email
+    + 'Your claim ID is: ' + claimID + '\n'
+    + 'The email related to that item is: ' + email + '\n'
     + 'Please message the user using the above email address in order to exchange the item.\n'
     + '\n'
     + 'Regards,\n'
